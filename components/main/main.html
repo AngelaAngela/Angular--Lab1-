@@ -1,0 +1,33 @@
+
+<form>
+	
+	<h1> TODO List</h1>
+	<p>A place to store the things you have to do!</p>
+	<input class="filterYour" type ="text" placeholder="Filter your to-dos" ng-model="$ctrl.x"/>
+	
+	
+	
+
+	<ol>
+    	<li ng-repeat="items in $ctrl.list" ng-class="{strike: items.done === true}"><button ng-if="items.done === false" class="complete">Complete</button>{{items.todo}}
+     
+      	<button ng-disabled="" class="x">X</button> </li>
+  	</ol>
+  	
+  	<input class ="addYour" type="text" placeholder="Add your to-do" ng-model="$ctrl.add"/>
+  	
+  	<button class="add" ng-disabled="!$ctrl.text">Add</buttton>
+  
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
