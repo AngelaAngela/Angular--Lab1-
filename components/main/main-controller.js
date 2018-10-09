@@ -15,8 +15,23 @@ angular.module ("app")
      	{ todo: "Get gas", done: false},
      	{ todo: "Wash the car", done: false}
     ];
+
+    $ctrl.addTask = function(todo){
+    	$ctrl.list.push({todo: $ctrl.newtoDo,
+            done: false});
+        $ctrl.newtoDo = "";
+    }
     
-   })
+    $ctrl.removeTask = function(index){
+        $ctrl.list.splice(index, 1)
+          
+    }
+
+    $ctrl.completeTask = function (items){
+        items.done = true;
+    }
+
+   });
  }
 
 

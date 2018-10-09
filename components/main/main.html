@@ -3,28 +3,28 @@
 	
 	<h1> TODO List</h1>
 	<p>A place to store the things you have to do!</p>
-	<input class="filterYour" type ="text" placeholder="Filter your to-dos" ng-model="$ctrl.x"/>
+	<input class="filterYour" type ="text" placeholder="Filter your to-dos" ng-model="items"/>
 	
 	
 	
 
 	<ol>
-    	<li ng-repeat="items in $ctrl.list" ng-class="{strike: items.done === true}"><button ng-if="items.done === false" class="complete">Complete</button>{{items.todo}}
+    	<li ng-repeat="items in $ctrl.list | filter: items" ng-class="{strike: items.done === true}"><button ng-if="items.done === false" ng-click="$ctrl.completeTask(items)" class="complete">Complete</button>{{items.todo}}
      
-      	<button ng-disabled="" class="x">X</button> </li>
+      	<button ng-disabled="" class="x" ng-click=$ctrl.removeTask($index)>X</button> </li>
   	</ol>
   	
-  	<input class ="addYour" type="text" placeholder="Add your to-do" ng-model="$ctrl.add"/>
+  	<input class ="addYour" type="text" placeholder="Add your to-do" ng-model="$ctrl.newtoDo"/>
   	
-  	<button class="add" ng-disabled="!$ctrl.text">Add</buttton>
+  	<button class="add" ng-click="$ctrl.addTask(todo)" >Add</buttton>
   
 </form>
 
 
 
 
-
-
+<!-- ng-disabled="!$ctrl.text"
+ -->
 
 
 
